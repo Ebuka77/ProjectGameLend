@@ -26,7 +26,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
+
+        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+        intent.putExtra("EXIT", false);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+
 
         loginEmail = findViewById(R.id.email_login);
         loginPassword = findViewById(R.id.password_login);
